@@ -2,6 +2,7 @@ import re
 import pandas as pd
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.pipeline import Pipeline
 
 class CleanTitleImputer(BaseEstimator, TransformerMixin):
       
@@ -67,9 +68,6 @@ class FuelTypeImputer(BaseEstimator, TransformerMixin):
         pattern = "(" + "|".join(self.fuel_types) + ")"
         matches = X["engine"].str.extract(pattern, flags=re.IGNORECASE, expand=False)
         X.loc[missing_condition, "fuel_type"] = matches[missing_condition].fillna("Gasoline")
-        # for fuel_type in self.fuel_types:
-        #     filt = X["engine"].str.contains(fuel_type, case=False, na=False) & condition
-        #     X.loc[filt, "fuel_type"] = fuel_type
       
         return X
 
@@ -98,7 +96,7 @@ class FuelTypeImputer(BaseEstimator, TransformerMixin):
 class MultipleTransmissionHandler(BaseEstimator, TransformerMixin):
 
     def __init__(self):
-        self.automatic_transmission_names = ["A/T", "Automatic", "AT", "At"]
+        self.automatic_transmission_names = ["A/T", "Automatic", "AT", "At", "CVT", "DSG", "Powershift", "i-Shift", "Matic", "Easy-R", "Dualogic", "X-Tronic", "Multitronic", "Tiptronic"]
 
     def fit(self, X, y=None):
         return self
@@ -112,3 +110,10 @@ class MultipleTransmissionHandler(BaseEstimator, TransformerMixin):
         X.loc[~is_automatic, "transmission"] = "Manual"
 
         return X
+
+data_imputer = Pipeline([
+    ("clean_title_imputer", CleanTitleImputer()),
+    ("accident_report_imputer", AccidentReportImputer()),
+    ("fuel_type_imputer", FuelTypeImputer()),
+    ("transmission_handler", MultipleTransmissionHandler()),
+])
