@@ -27,25 +27,31 @@ This project predicts used car prices using a machine learning regression model.
 
 ## ⚙️ Installation
 
+### Prerequisites
+
+- Python 3.11+  
+- Git  
+- [uv (Astral)](https://github.com/astral-sh/uv) installed (you can install it via `pip install uv` or your package manager)
+
+### Steps
+
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/rayanrfd/car-price-regression.git
+git clone https://github.com/yourusername/car-price-regression.git
 cd car-price-regression
 ```
 
-1. (Optional) Create and activate a Python virtual environment:
-
+Install dependencies with uv (reads pyproject.toml):
 ```bash
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+uv sync
 ```
 
-1. Install dependencies:
-
+(Optional) Activate the virtual environment:
 ```bash
-pip install -r requirements.txt
+source .venv/bin/activate
 ```
+
 
 ---
 
@@ -80,7 +86,7 @@ Access the interactive API docs at `http://localhost:8000/docs`.
 Launch the frontend app for user-friendly prediction input:
 
 ```bash
-streamlit run src/ui/ui.py
+python -m streamlit run src/ui/ui.py
 ```
 
 ---
@@ -90,7 +96,7 @@ streamlit run src/ui/ui.py
 Run tests using pytest:
 
 ```bash
-pytest test/
+pytest
 ```
 
 Project Link: https://github.com/yourusername/car-price-regression
