@@ -58,3 +58,13 @@ class Brand(str, Enum):
     tesla = "Tesla"
     aston = "Aston"
     porsche = "Porsche"
+
+brand_list = (
+    "Scion", "Saab", "Lexus", "Rivian", "MINI", "Alfa", "Land", "INFINITI", "Rolls-Royce",
+    "Cadillac", "Nissan", "Toyota", "McLaren", "Ferrari", "Karma", "Hyundai", "Suzuki",
+    "Chrysler", "Porsche", "Jaguar", "Kia", "Buick", "Bentley", "Tesla", "Ford", "Maserati",
+    "Pontiac", "Subaru", "Polestar", "Jeep", "Mercedes-Benz", "Chevrolet", "Maybach",
+    "Lamborghini", "smart", "Bugatti", "Plymouth", "Lucid", "Mercury", "Aston", "FIAT",
+    "Genesis", "Mazda", "Mitsubishi", "Lincoln", "GMC", "Dodge", "Saturn", "Hummer",
+    "BMW", "Audi", "Volvo", "Acura", "Volkswagen", "Lotus", "RAM", "Honda"
+)

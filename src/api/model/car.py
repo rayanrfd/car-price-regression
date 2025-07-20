@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from enum import Enum
-from brand import Brand
+from .brand import Brand
 
 class FuelType(str, Enum):
     hybrid = "Hybrid"
