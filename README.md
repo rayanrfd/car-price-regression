@@ -88,15 +88,3 @@ Launch the frontend app for user-friendly prediction input:
 ```bash
 python -m streamlit run src/ui/ui.py
 ```
-
----
-
-## 🧪 Testing
-
-Run tests using pytest:
-
-```bash
-pytest
-```
-
-Project Link: https://github.com/yourusername/car-price-regression
