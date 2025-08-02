@@ -59,13 +59,7 @@ source .venv/bin/activate
 
 ### Train the model
 
-Run the training pipeline to preprocess data and train the regression model:
-
-```bash
-python src/pipeline/train.py
-```
-
-This saves the model and preprocessor in the `models/` folder.
+In Progress...
 
 ---
 
@@ -88,3 +82,4 @@ Launch the frontend app for user-friendly prediction input:
 ```bash
 python -m streamlit run src/ui/ui.py
 ```
+
